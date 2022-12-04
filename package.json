@@ -1,0 +1,23 @@
+{
+  "name": "tsconfig.d.ts",
+  "version": "0.0.1",
+  "description": "A tsconfig definition and an opinionated default generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FranzZemen/tsconfig.d.ts.git"
+  },
+  "author": "Franz Zemen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FranzZemen/tsconfig.d.ts/issues"
+  },
+  "homepage": "https://github.com/FranzZemen/tsconfig.d.ts#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
