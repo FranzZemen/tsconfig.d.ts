@@ -1,0 +1,18 @@
+/*
+Created by Franz Zemen 12/04/2022
+License Type: MIT
+*/
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "target": "ES2022",
+    "sourceMap": true,
+    "composite": true, // Also sets incremental: true, declaration: true
+    "tsBuildInfoFile": "../publish/tsconfig.tsbuildinfo.json",
+    "outDir": "../publish"
+  },
+  "include": ["./**/*.ts"],
+  "exclude": [
+    "../node_modules"
+  ]
+}

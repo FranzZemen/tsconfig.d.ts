@@ -1,9 +1,13 @@
 {
   "name": "tsconfig.d.ts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A tsconfig definition and an opinionated default generator",
+  "type": "module",
   "main": "index.js",
   "scripts": {
+    "build": "tsc -build",
+    "clean": "npx del-cli ./publish",
+    "rebuild": "echo \"start clean\" && npx del-cli ./publish && echo \"clean complete, start build\" && tsc -build && echo \"build complete\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,7 +21,10 @@
   },
   "homepage": "https://github.com/FranzZemen/tsconfig.d.ts#readme",
   "dependencies": {
+    "typescript": "^4.9.3"
   },
   "devDependencies": {
+    "del-cli": "^5.0.0"
   }
 }
+
