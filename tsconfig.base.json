@@ -4,14 +4,11 @@ License Type: MIT
 */
 {
   "compilerOptions": {
-    "module": "NodeNext",
-    "target": "ES2022",
+    "module": "CommonJS",
+    "target": "ES2021",
     "sourceMap": true,
-    "composite": true, // Also sets incremental: true, declaration: true
-    "tsBuildInfoFile": "../publish/tsconfig.tsbuildinfo.json",
-    "outDir": "../publish"
+    "declarationMap": true
   },
-  "include": ["./**/*.ts"],
   "exclude": [
     "../node_modules"
   ]

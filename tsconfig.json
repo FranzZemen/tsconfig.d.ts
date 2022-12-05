@@ -6,6 +6,11 @@ License Type: MIT
   "files": [],
   "include": [],
   "references": [
-    { "path": "./src" },
+    {
+      "path": "./src"
+    },
+    {
+      "path": "./util"
+    }
   ]
 }

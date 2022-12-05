@@ -1,0 +1,23 @@
+{
+  "name": "tsconfig.d.ts",
+  "version": "0.0.3",
+  "description": "A tsconfig definition and an opinionated default generator",
+  "type": "module",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FranzZemen/tsconfig.d.ts.git"
+  },
+  "author": "Franz Zemen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FranzZemen/tsconfig.d.ts/issues"
+  },
+  "homepage": "https://github.com/FranzZemen/tsconfig.d.ts#readme",
+  "dependencies": {
+    "typescript": "^4.9.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.10"
+  }
+}

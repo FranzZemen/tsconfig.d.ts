@@ -6,8 +6,9 @@ License Type: MIT
   "extends": "../tsconfig.base.json",
   "compilerOptions": {
     "composite": true, // Also sets incremental: true, declaration: true
-    "tsBuildInfoFile": "../transient/build-info-files/src/tsconfig.tsbuildinfo.json",
-    "outDir": "../transient/publish"
+    "tsBuildInfoFile": "./transient/build-info-files/util/tsconfig.tsbuildinfo.json",
+    "outDir": "./transient/dist",
+    "rootDir": "./src"
   },
-  "include": ["./**/*.ts"],
+  "include": ["./src/**/*.ts"]
 }

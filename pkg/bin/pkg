@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+
+const argv = require('process').argv;
+try {
+  console.log(argv);
+  if(argv.length >= 2 && argv[1].endsWith('pkg')) {
+    argv.splice(1, 1, 'util', 'pkg');
+    console.log(argv);
+  } else {
+    console.log('Usage: npx pkg');
+  }
+  const clean = require('#pkg');
+} catch (err) {
+  console.log(err);
+}

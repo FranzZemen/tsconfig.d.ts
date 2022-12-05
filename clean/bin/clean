@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+
+const argv = require('process').argv;
+try {
+  console.log(argv);
+  if(argv.length >= 2 && argv[1].endsWith('clean')) {
+    argv.splice(1, 1, 'util', 'clean');
+    console.log(argv);
+  } else {
+    console.log('Usage: npx clean');
+  }
+  const clean = require('#clean');
+} catch (err) {
+  console.log(err);
+}

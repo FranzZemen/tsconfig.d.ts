@@ -1,0 +1,16 @@
+{
+  "name": "util",
+  "version": "0.0.1",
+  "description": "Utilities",
+  "type": "commonjs",
+  "main": "./transient/dist/index.js",
+  "types": "./transient/dist/index.d.ts",
+  "bin": {
+    "util": "./bin/util"
+  },
+  "imports": {
+    "#util": "./transient/dist/index.js"
+  },
+  "dependencies": {
+  }
+}

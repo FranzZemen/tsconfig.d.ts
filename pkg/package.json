@@ -1,0 +1,15 @@
+{
+  "name": "pkg",
+  "version": "0.0.2",
+  "description": "pkg",
+  "type": "commonjs",
+  "main": "./index.js",
+  "bin": {
+    "pkg": "bin/pkg"
+  },
+  "imports": {
+    "#pkg": "./index.js"
+  },
+  "dependencies": {
+  }
+}

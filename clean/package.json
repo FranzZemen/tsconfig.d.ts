@@ -1,0 +1,15 @@
+{
+  "name": "clean",
+  "version": "0.0.1",
+  "description": "Clean",
+  "type": "commonjs",
+  "main": "./index.js",
+  "bin": {
+    "clean": "./bin/clean"
+  },
+  "imports": {
+    "#clean": "./index.js"
+  },
+  "dependencies": {
+  }
+}

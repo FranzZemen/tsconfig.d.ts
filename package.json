@@ -1,14 +1,15 @@
 {
   "name": "tsconfig.d.ts",
-  "version": "0.0.2",
   "description": "A tsconfig definition and an opinionated default generator",
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "build": "tsc -build",
-    "clean": "npx del-cli ./publish",
-    "rebuild": "echo \"start clean\" && npx del-cli ./publish && echo \"clean complete, start build\" && tsc -build && echo \"build complete\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "windows": "npm config set script-shell H:\\Git\\bin\\bash.exe",
+    "clean": "cd ./util && npx tsc && cd .. && npx clean",
+    "build": "npx tsc -build",
+    "rebuild": "echo \"start clean\" && npx clean util && echo \"clean complete, start build\" && npx tsc -build && echo \"build complete\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish": "cp ./package.publish.json ./transient/publish/package.json && cd ./transient && npm publish ./publish"
   },
   "repository": {
     "type": "git",
@@ -21,10 +22,12 @@
   },
   "homepage": "https://github.com/FranzZemen/tsconfig.d.ts#readme",
   "dependencies": {
-    "typescript": "^4.9.3"
+    "clean": "file:clean",
+    "pkg": "file:pkg",
+    "typescript": "^4.9.3",
+    "util": "file:util"
   },
   "devDependencies": {
-    "del-cli": "^5.0.0"
+    "@types/node": "^18.11.10"
   }
 }
-

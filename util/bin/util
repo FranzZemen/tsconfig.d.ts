@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+try {
+  console.log('require');
+  const util = require('#util');
+} catch (err) {
+  console.log(err);
+}
