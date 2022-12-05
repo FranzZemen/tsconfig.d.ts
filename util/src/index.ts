@@ -3,7 +3,7 @@ Created by Franz Zemen 12/04/2022
 License Type: MIT
 */
 import {exit, argv, cwd} from 'node:process';
-import {rm, readFileSync} from 'node:fs';
+import {rm, readFileSync, writeFileSync} from 'node:fs';
 import {constants} from 'os';
 
 if (argv.length < 3) {
@@ -13,14 +13,11 @@ if (argv.length < 3) {
 
 const command = argv[2];
 
-console.log(`Command ${command} issued`);
-
 if (command === 'clean') {
   let cleanUtil = false;
   if (argv.length === 4) {
     const subCommand = argv[3];
     if (subCommand === 'util') {
-      console.log(`Subcommand ${subCommand}`);
       cleanUtil = true;
     } else {
       console.log(`Unrecognized subcommand ${subCommand}`);
@@ -52,9 +49,46 @@ if (command === 'clean') {
     }
   });
 } else if (command === 'pkg') {
+  let incMajor = false, incMinor = false, incPatch = false;
+  if (argv.length === 4) {
+    const subCommand = argv[3];
+    console.log(`Subcommand: ${subCommand}`)
+    if (subCommand === 'major') {
+      incMajor = true;
+    } else if(subCommand === 'minor') {
+      incMinor = true;
+    } else if(subCommand === 'patch') {
+      incPatch = true;
+    }
+  } else {
+    console.log('Format is pkg [patch|minor|major]' );
+    exit(400);
+  }
+  console.log('Packaging starting...');
   try {
-    const packageJson = readFileSync('/package.publish.jso');
-    console.log(packageJson);
+    let packageJson = readFileSync('./package.publish.json', {encoding: 'utf8'});
+    const regex = /(\"version\"\s*\:\s*\")([0-9]+)\.([0-9]+)\.([0-9]+)([^"]*\")/;
+    const result = regex.exec(packageJson);
+    if(result) {
+      let prefix = result[1];
+      let major = parseInt(result[2],10);
+      let minor = parseInt(result[3], 10);
+      let patch = parseInt(result[4],10);
+      console.log(`Existing version: ${major}.${minor}.${patch}`);
+      if(incMajor) major++;
+      else if(incMinor) minor++;
+      else if (incPatch) patch++;
+      else {
+        console.log('Error, no incremental');
+        exit(500);
+      }
+      console.log(`New version: ${major}.${minor}.${patch}`);
+      let suffix = result[5];
+      packageJson = packageJson.replace(regex, `${prefix}${major}.${minor}.${patch}${suffix}`);
+      writeFileSync('./package.publish.json', packageJson, {encoding: 'utf8'});
+      writeFileSync('./transient/publish/package.json',packageJson,{encoding: 'utf8'});
+      console.log('...packaging completed')
+    }
   } catch (err) {
     console.log(err);
   }

@@ -9,7 +9,8 @@
     "build": "npx tsc -build",
     "rebuild": "echo \"start clean\" && npx clean util && echo \"clean complete, start build\" && npx tsc -build && echo \"build complete\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "publish": "cp ./package.publish.json ./transient/publish/package.json && cd ./transient && npm publish ./publish"
+    "upVersion": "npx pkg",
+    "publish": "cd ./transient && npm publish ./publish"
   },
   "repository": {
     "type": "git",
