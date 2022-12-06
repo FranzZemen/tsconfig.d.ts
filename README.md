@@ -1,6 +1,5 @@
 # Readme
 
-This is in active development. 
+Very lightweight package to get an accurate tsconfig.ts type, and some minor utilities to go with it.
 
-The tsconfig.ts is accurate and usable.  The project is currently dependent on the latest typescript (need to fix 
-dependency semver), but should be fine.
+This is in active development and documentation, but the TsConfig type is accurate and usable. 
