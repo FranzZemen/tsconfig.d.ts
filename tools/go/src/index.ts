@@ -3,7 +3,8 @@ Created by Franz Zemen 12/04/2022
 License Type: MIT
 */
 import {exit, argv, cwd} from 'node:process';
-import {rm, readFileSync, writeFileSync} from 'node:fs';
+import * as fs from 'fs';
+import {rm, readFileSync, writeFileSync, copyFileSync} from 'node:fs';
 import {constants} from 'os';
 
 if (argv.length < 3) {
@@ -75,9 +76,16 @@ if (command === 'clean') {
       let minor = parseInt(result[3], 10);
       let patch = parseInt(result[4],10);
       console.log(`Existing version: ${major}.${minor}.${patch}`);
-      if(incMajor) major++;
-      else if(incMinor) minor++;
-      else if (incPatch) patch++;
+      if(incMajor) {
+        major++;
+        minor = 0;
+        patch = 0;
+      } else if(incMinor) {
+        minor++;
+        patch = 0;
+      } else if (incPatch) {
+        patch++;
+      }
       else {
         console.log('Error, no incremental');
         exit(500);
@@ -87,6 +95,7 @@ if (command === 'clean') {
       packageJson = packageJson.replace(regex, `${prefix}${major}.${minor}.${patch}${suffix}`);
       writeFileSync('./package.publish.json', packageJson, {encoding: 'utf8'});
       writeFileSync('./transient/publish/package.json',packageJson,{encoding: 'utf8'});
+      copyFileSync('./README.md', './transient/publish/README.md');
       console.log('...packaging completed')
     }
   } catch (err) {
