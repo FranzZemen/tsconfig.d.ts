@@ -3,7 +3,8 @@
   "version": "0.1.1",
   "description": "A tsconfig definition and an opinionated default generator",
   "type": "module",
-  "main": "index.js",
+  "main": "./tsconfig.js",
+  "types": "./tsconfig.d.ts",
   "scripts": {
     "postPrepare": "npx tsc -build"
   },
