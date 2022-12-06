@@ -3,4 +3,4 @@
 /node_modules/
 /.idea/
 /transient/
-/util/transient/
+/tools/go/transient/

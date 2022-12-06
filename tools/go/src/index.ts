@@ -14,11 +14,11 @@ if (argv.length < 3) {
 const command = argv[2];
 
 if (command === 'clean') {
-  let cleanUtil = false;
+  let cleanGo = false;
   if (argv.length === 4) {
     const subCommand = argv[3];
-    if (subCommand === 'util') {
-      cleanUtil = true;
+    if (subCommand === 'go') {
+      cleanGo = true;
     } else {
       console.log(`Unrecognized subcommand ${subCommand}`);
     }
@@ -31,9 +31,9 @@ if (command === 'clean') {
       exit(500);
     } else {
       console.log('...clean completed');
-      if (cleanUtil) {
-        transient = './util/transient';
-        console.log(`util ${transient} starting...`);
+      if (cleanGo) {
+        transient = './tools/go/transient';
+        console.log(`clean ${transient} starting...`);
         rm(transient, {recursive: true, force: true}, err => {
           if (err) {
             console.log(err);

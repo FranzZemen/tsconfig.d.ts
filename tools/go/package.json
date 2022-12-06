@@ -1,16 +1,14 @@
 {
-  "name": "util",
+  "name": "go",
   "version": "0.0.1",
-  "description": "Utilities",
+  "description": "Tool implementations",
   "type": "commonjs",
   "main": "./transient/dist/index.js",
   "types": "./transient/dist/index.d.ts",
   "bin": {
-    "util": "./bin/util"
+    "go": "./bin/go"
   },
   "imports": {
-    "#util": "./transient/dist/index.js"
-  },
-  "dependencies": {
+    "#go": "./transient/dist/index.js"
   }
 }

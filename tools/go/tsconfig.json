@@ -3,7 +3,7 @@ Created by Franz Zemen 12/04/2022
 License Type: MIT
 */
 {
-  "extends": "../tsconfig.base.json",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "composite": true, // Also sets incremental: true, declaration: true
     "tsBuildInfoFile": "./transient/build-info-files/util/tsconfig.tsbuildinfo.json",

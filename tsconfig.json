@@ -10,7 +10,7 @@ License Type: MIT
       "path": "./src"
     },
     {
-      "path": "./util"
+      "path": "./tools/go"
     }
   ]
 }

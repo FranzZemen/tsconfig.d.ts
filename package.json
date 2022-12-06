@@ -1,13 +1,12 @@
 {
   "name": "tsconfig.d.ts",
   "description": "A tsconfig definition and an opinionated default generator",
-  "type": "module",
   "main": "index.js",
   "scripts": {
     "windows": "npm config set script-shell H:\\Git\\bin\\bash.exe",
-    "clean": "cd ./util && npx tsc && cd .. && npx clean",
+    "clean": "cd ./tools/go && npx tsc && cd ../.. && npx clean",
     "build": "npx tsc -build",
-    "rebuild": "echo \"start clean\" && npx clean util && echo \"clean complete, start build\" && npx tsc -build && echo \"build complete\"",
+    "rebuild": "echo \"start clean\" && npx clean go && echo \"clean complete, start build\" && npx tsc -build && echo \"build complete\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "upVersion": "npx pkg",
     "publish": "cd ./transient && npm publish ./publish"
@@ -23,10 +22,10 @@
   },
   "homepage": "https://github.com/FranzZemen/tsconfig.d.ts#readme",
   "dependencies": {
-    "clean": "file:clean",
-    "pkg": "file:pkg",
-    "typescript": "^4.9.3",
-    "util": "file:util"
+    "clean": "file:tools/clean",
+    "go": "file:tools/go",
+    "pkg": "file:tools/pkg",
+    "typescript": "^4.9.3"
   },
   "devDependencies": {
     "@types/node": "^18.11.10"
