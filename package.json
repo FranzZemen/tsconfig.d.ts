@@ -21,13 +21,11 @@
     "url": "https://github.com/FranzZemen/tsconfig.d.ts/issues"
   },
   "homepage": "https://github.com/FranzZemen/tsconfig.d.ts#readme",
-  "dependencies": {
+  "devDependencies": {
+    "@types/node": "^18.11.10",
     "clean": "file:tools/clean",
     "go": "file:tools/go",
     "pkg": "file:tools/pkg",
     "typescript": "^4.9.3"
-  },
-  "devDependencies": {
-    "@types/node": "^18.11.10"
   }
 }
