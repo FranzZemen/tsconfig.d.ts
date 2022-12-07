@@ -8,8 +8,7 @@ import {ModuleResolution, TsConfig} from './tsconfig.js';
 const tsconfigBase: TsConfig = {
   compilerOptions: {
     /**
-     * TYPE CHECKING:  Write better code and have fewer errors by setting as
-     * many of these to restrictive settings (true or false as the case may be)
+     * TYPE CHECKING:
      */
     /* TS 1.8 */ allowUnusedLabels: false,
     /* TS 1.8 */ allowUnreachableCode: false,
@@ -45,6 +44,11 @@ const tsconfigBase: TsConfig = {
     /**
      * MODULES
      */
+
+    //----------------------------------------------------------------------
+    // If find this always useful and don't understand why its not a default
+    //----------------------------------------------------------------------
+    /* TS ?.? */ resolveJsonModule: true,
 
     // ---------------------------------------------------------------------
     // Use baseUrl='./' (or whatever value) to avoid using relative imports,
@@ -89,30 +93,109 @@ const tsconfigBase: TsConfig = {
     // -----------------------------------------------------------------------
     // /* TS 1.0 */ module: undefined
 
-    // -----------------------
+    // -----------------------------------------------------------------------------
     // moduleResolution, which about how modules are found or 'resolved' is pretty
     // straightforward.  If you need to use classic you probably don't need this
-    // package.  This leaves the choices as node node16 and nodenext. But which
+    // package.  This leaves the choices as node, node16 and nodenext. But which
     // one to use?  You might be trying different values and not seeing any
     // differences.  The typescript doc guidance seems sound enough...use node16
     // or nodenext which is the default for module values of the same, otherwise
     // use node. HOWEVER, there are other reasons to use node16/nodenext, for
-    // example I discovered that the imports feature in node is only supported
-    // in typescript with the moduleResolution set to node or nodenext, and
+    // example I discovered that the package.josn imports feature in node is only
+    // supported in typescript with the moduleResolution set to node or nodenext, and
     // I expect that evolving node features will be similar.
+    // -----------------------------------------------------------------------------
     // /* node TS < 4.7 */ moduleResolution: 'node',
     /* node16, nodenext TS >= 4.7 */ moduleResolution: ModuleResolution.nodenext,
 
+    // --------------------------------------
+    // Left to descendant tsconfig.json files
+    // --------------------------------------
+    // /* TS 1.5 */ rootDir: undefined,
+    // /* TS 2.0 */ rootDirs: undefined,
+    // /* TS ?.? */ typeRoots: undefined,
+    // /* TS ?.? */ types: undefined,
 
     /**
-     * The following are left to descendent tsconfig.json as needed
+     * EMIT
      */
+    /* TS 1.0 */ declaration: true,
+    /* TS ?.? */ sourceMap: true,
+    // --------------------------------------
+    // Left to descendant tsconfig.json files
+    // --------------------------------------
+    // /* TS 2.0 */ declarationDir: undefined,
+    // /* TS 2.8 */ emitDeclarationOnly: undefined,
+    // /* TS 1.5 */ inlineSourceMap: undefined,
+    // /* TS 1.4 */ noEmitOnError: undefined,
+    // /* TS ?.? */ outDir: undefined,
+    // /* TS 1.0 */ outFile: undefined,
+    // /* TS ?.? */ removeComments: undefined,
+
+    /**
+     * JAVASCRIPT SUPPORT
+     */
+    /* TS 1.8 */ allowJs: true,
+    /* TS 2.3 */ checkJs: true,
+
+    // --------------------------------------
+    // Left to descendant tsconfig.json files
+    // --------------------------------------
+    // /* TS ?.? */ maxNodeModuleJsDepth: undefined
 
 
-    // ------------------------------------------------------
-    // If you use this, you probably don't need this package.
-    // ------------------------------------------------------
-    // /* TS 3.5 */ allowUmdGlobalAccess: undefined
+    /**
+     * EDITOR SUPPORT
+     */
+    // All editor support are in "NOT MAINSTREAM"
+
+    /**
+     * INTEROP CONSTRAINTS
+     */
+    /* TS 1.8 */ allowSyntheticDefaultImports: true,
+    /* TS 2.7 */ esModuleInterop: true,
+    /* TS ?.? */ forceConsistentCasingInFileNames: true,
+
+    // --------------------------------------
+    // Left to descendant tsconfig.json files
+    // --------------------------------------
+    // /* TS ?.? */ preserveSymlinks: undefined,
+
+    /**
+     * BACKWARDS COMPATIBILITY
+     */
+    // All attributes in "NOT MAINSTREAM"
+
+
+    /**
+     * NOT MAINSTREAM
+     */
+    // /* TS 4.7 */ moduleSuffixes: undefined,
+    // /* TS ?.? */ noResolve: undefined,
+    // /* TS ?.? */ paths: undefined,
+    // /* TS 3.5 */ allowUmdGlobalAccess: undefined,
+    // /* TS 2.3 */ downlevelIteration: undefined,
+    // /* TS ?.? */ importHelpers: undefined,
+    // /* TS ?.? */ emitBOM: undefined,
+    // /* TS 3.8 */ importsNotUsedAsValues: undefined,
+    // /* TS ?.? */ mapRoot: undefined,
+    // /* TS 1.5 */ newLine: undefined,
+    // /* TS ?.? */ noEmit: undefined,
+    // /* TS 1.5 */ noEmitHelpers: undefined,
+    // /* TS ?.? */ preserveConstEnums: undefined,
+    // /* TS 4.5 */ preserveValueImports: undefined,
+    // /* TS ?.? */ sourceRoot: undefined,
+    // /* TS ?.? */ stripInternal: undefined,
+    // /* TS ?.? */ disableSizeLimit: undefined,
+    // /* TS ?.? */ plugins: undefined,
+    // /* TS ?.? */ isolatedModules: undefined,
+    // /* TS ?.? */ charset: undefined,
+    // /* TS 2.9 */ keyofStringsOnly: undefined,
+    // /* TS ?.? */ noImplicitUseStrict: undefined,
+    // /* TS 2.4 */ noStrictGenericChecks: undefined,
+    // /* TS ?.? */ out,
+    // /* TS ?.? */ suppressExcessPropertyErrors,
+    // /* TS ?.? */ suppressImplicitAnyIndexErrors,
   },
   // ------------------------------------------------------------
   // The following are left to descendent tsconfig.json as needed

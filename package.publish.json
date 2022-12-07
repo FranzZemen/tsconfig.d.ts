@@ -1,6 +1,6 @@
 {
   "name": "tsconfig.d.ts",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "A tsconfig definition and an opinionated default generator",
   "type": "module",
   "main": "./tsconfig.js",

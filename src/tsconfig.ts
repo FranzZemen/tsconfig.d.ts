@@ -3,6 +3,10 @@ Created by Franz Zemen 12/04/2022
 License Type: MIT
 */
 
+export type PluginImport = {
+  name: string;
+}
+
 export enum WatchFile {
   fixedpollinginterval = 'fixedpollinginterval',
   prioritypollinginterval = 'prioritypollinginterval',
@@ -153,7 +157,7 @@ export interface CompilerOptions {
   maxNodeModuleJsDepth?: number;
   /* TS 1.0 */ module?: Module;
   /* TS < 4.7, TS > 4.7 */moduleResolution?: ModuleResolution;
-  moduleSuffixes?: string[];
+  /* TS 4.7 */ moduleSuffixes?: string[];
   moduleDetection?: ModuleDetection;
   newLine?: NewLine;
   noEmit?: boolean;
@@ -171,12 +175,13 @@ export interface CompilerOptions {
   /* TS 4.2 */ noPropertyAccessFromIndexSignature?: boolean;
   assumeChangesOnlyAffectDirectDependencies?: boolean;
   noLib?: boolean;
-  noResolve?: boolean;
-  /* TS 4.1 */noUncheckedIndexedAccess?: boolean;
+  /* TS ?.? */ noResolve?: boolean;
+  /* TS 4.1 */ noUncheckedIndexedAccess?: boolean;
   out?: string;
   outDir?: string;
   outFile?: string;
-  paths?: MapLike<string[]>;
+  plugins?: PluginImport[],
+  /* TS ?.? */ paths?: MapLike<string[]>;
   preserveConstEnums?: boolean;
   /* TS 4.3 */ noImplicitOverride?: boolean;
   preserveSymlinks?: boolean;
@@ -207,7 +212,7 @@ export interface CompilerOptions {
   target?: Target;
   traceResolution?: boolean;
   /* TS 4.4 */ useUnknownInCatchVariables?: boolean;
-  resolveJsonModule?: boolean;
+  /* TS ?.? */ resolveJsonModule?: boolean;
   types?: string[];
   /** Paths used to compute primary types search locations */
   typeRoots?: string[];
