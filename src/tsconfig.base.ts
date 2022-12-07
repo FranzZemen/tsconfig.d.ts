@@ -167,6 +167,35 @@ export const tsconfigBase: TsConfig = {
      */
     // All attributes in "NOT MAINSTREAM"
 
+    /**
+     * LANGUAGE AND ENVIRONMENT
+     */
+    // /* TS ?.? */ emitDecoratorMetadata = undefined;
+    /* TS ?.? */ experimentalDecorators: true,
+    // /* TS 2.2 */ jsx: undefined,
+    // /* TS ?.? */ jsxFactory: undefined,
+    // /* TS 4.0 */ jsxFragmentFactory: undefined,
+
+    // --------------------------------------------------------------------------------------------
+    // See note in Typescript docs about lib overridden by npm modules where lib files update often
+    // --------------------------------------------------------------------------------------------
+    // /* TS 2.0, TS 4.5 */ lib: undefined,
+
+    // --------------------------------------------
+    // Default is what everyone would normally want
+    // --------------------------------------------
+    // /* TS 4.7 */ moduleDetection: undefined,
+
+    // --------------------------------------
+    // Left to descendant tsconfig.json files
+    // --------------------------------------
+    // /* TS 1.0 */ target,
+
+
+
+
+
+
 
     /**
      * NOT MAINSTREAM
@@ -197,6 +226,9 @@ export const tsconfigBase: TsConfig = {
     // /* TS ?.? */ out,
     // /* TS ?.? */ suppressExcessPropertyErrors,
     // /* TS ?.? */ suppressImplicitAnyIndexErrors,
+    // /* TS ?.? */ noLib: undefined,
+    // /* TS ?.? */ reactNamespace,
+    // /* TS 3.7 */ useDefineForClassFields,
   },
   // ------------------------------------------------------------
   // The following are left to descendent tsconfig.json as needed

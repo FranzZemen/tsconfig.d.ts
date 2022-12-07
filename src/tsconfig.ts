@@ -140,18 +140,18 @@ export interface CompilerOptions {
   disableReferencedProjectLoad?: boolean;
   /* TS 2.3 */ downlevelIteration?: boolean;
   /* TS ?.? */ OM?: boolean;
-  emitDecoratorMetadata?: boolean;
+  /* TS ?.? */ emitDecoratorMetadata?: boolean;
   /* TS 4.4 */ exactOptionalPropertyTypes?: boolean;
-  experimentalDecorators?: boolean;
+  /* TS ?.? */ experimentalDecorators?: boolean;
   /* TS ?.? */ forceConsistentCasingInFileNames?: boolean;
   /* TS ?.? */ importHelpers?: boolean;
   /* TS 3.8 */ importsNotUsedAsValues?: ImportsNotUsedAsValues;
   /* TS 1.5 */ eSourceMap?: boolean;
   inlineSources?: boolean;
   /* TS ?.? */ isolatedModules?: boolean;
-  jsx?: Jsx;
+  /* TS 2.2 */ jsx?: Jsx;
   /* TS 2.9 */ keyofStringsOnly?: boolean;
-  lib?: string[];
+  /* TS 2.0, TS 4.5 */ lib?: string[];
   locale?: string;
   /* TS ?.? */ mapRoot?: string;
   /* TS ?.? */ NodeModuleJsDepth?: number;
@@ -174,7 +174,7 @@ export interface CompilerOptions {
   /* TS ?.? */ noImplicitUseStrict?: boolean;
   /* TS 4.2 */ noPropertyAccessFromIndexSignature?: boolean;
   assumeChangesOnlyAffectDirectDependencies?: boolean;
-  noLib?: boolean;
+  /* TS ?.? */ noLib?: boolean;
   /* TS ?.? */ noResolve?: boolean;
   /* TS 4.1 */ noUncheckedIndexedAccess?: boolean;
   /* TS ?.? */ out?: string;
@@ -187,10 +187,10 @@ export interface CompilerOptions {
   /* TS ?.? */ preserveSymlinks?: boolean;
   /* TS 4.5 */ preserveValueImports?: boolean;
   project?: string;
-  reactNamespace?: string;
-  jsxFactory?: string;
-  jsxFragmentFactory?: string;
-  jsxImportSource?: string;
+  /* TS ?.? */ reactNamespace?: string;
+  /* TS ?.? */ jsxFactory?: string;
+  /* TS 4.0 */ jsxFragmentFactory?: string;
+  /* TS 4.0 */ jsxImportSource?: string;
   composite?: boolean;
   incremental?: boolean;
   tsBuildInfoFile?: string;
@@ -209,14 +209,14 @@ export interface CompilerOptions {
   /* TS ?.? */ stripInternal?: boolean;
   /* TS ?.? */ suppressExcessPropertyErrors?: boolean;
   /* TS ?.? */ suppressImplicitAnyIndexErrors?: boolean;
-  target?: Target;
+  /* TS 1.0 */ target?: Target;
   traceResolution?: boolean;
   /* TS 4.4 */ useUnknownInCatchVariables?: boolean;
   /* TS ?.? */ resolveJsonModule?: boolean;
   types?: string[];
   typeRoots?: string[];
   /* TS 1.8 */ esModuleInterop?: boolean;
-  useDefineForClassFields?: boolean;
+  /* TS 3.7 */ useDefineForClassFields?: boolean;
 }
 
 export interface TsConfig {
