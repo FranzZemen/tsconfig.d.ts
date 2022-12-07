@@ -4,7 +4,7 @@
   "description": "A tsconfig definition and an opinionated default generator",
   "type": "module",
   "main": "./index.js",
-  "types": "./tsconfig.d.ts",
+  "types": "./index.d.ts",
   "scripts": {
     "postPrepare": "npx tsc -build"
   },
