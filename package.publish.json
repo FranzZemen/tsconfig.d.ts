@@ -1,9 +1,9 @@
 {
   "name": "tsconfig.d.ts",
-  "version": "0.1.3",
+  "version": "0.1.6",
   "description": "A tsconfig definition and an opinionated default generator",
   "type": "module",
-  "main": "./tsconfig.js",
+  "main": "./index.js",
   "types": "./tsconfig.d.ts",
   "scripts": {
     "postPrepare": "npx tsc -build"
