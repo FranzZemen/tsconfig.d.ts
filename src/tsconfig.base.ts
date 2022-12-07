@@ -5,7 +5,7 @@ License Type: MIT
 
 import {ModuleResolution, TsConfig} from './tsconfig.js';
 
-const tsconfigBase: TsConfig = {
+export const tsconfigBase: TsConfig = {
   compilerOptions: {
     /**
      * TYPE CHECKING:
@@ -131,6 +131,7 @@ const tsconfigBase: TsConfig = {
     // /* TS ?.? */ outDir: undefined,
     // /* TS 1.0 */ outFile: undefined,
     // /* TS ?.? */ removeComments: undefined,
+    // /* TS 2.9 */ declarationMap: undefined,
 
     /**
      * JAVASCRIPT SUPPORT
