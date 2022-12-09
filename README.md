@@ -8,10 +8,16 @@ This is in active development and documentation, but the TsConfig type is accura
 
 # config.d.ts
 
-Install and retrieve the config.d.ts file, or if you want the origina ts file, either git clone the project or copy 
-from here:
+Install and retrieve the config.d.ts file, or if you want the original ts file, either git clone the project or copy 
+from here, below.
 
+# Install
+
+```
 npm i config.d.ts
+```
+
+# Usage
 
 ```typescript
 import {TsConfig} from './tsconfig.js';
@@ -20,6 +26,8 @@ const tsconfig: TsConfig = {}
 
 
 ````
+
+# Types
 
 ```typescript
 /*

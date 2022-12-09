@@ -192,10 +192,23 @@ export const tsconfigBase: TsConfig = {
     // /* TS 1.0 */ target,
 
 
+    /**
+     * COMPILER DIAGNOSTICS
+     */
+    // /* TS 4.2 */ explainFiles: undefined,
+    // /* TS ?.? */ extendedDiagnostics: undefined,
+    // /* TS 3.7 */ generateCpuProfile,
+    // /* TS ?.? */ listEmittedFiles: undefined,
+    // /* TS ?.? */ listFiles: undefined,
+    // /* TS 2.0 */ traceResolution: undefined,
 
 
-
-
+    /**
+     * PROJECTS
+     */
+    // /* TS 3.0 */ composite: undefined,
+    // /* TS 3.4 */ incremental: undefined,
+    // /* TS 3.4 */ tsBuildInfoFile: undefined,
 
     /**
      * NOT MAINSTREAM
@@ -227,8 +240,12 @@ export const tsconfigBase: TsConfig = {
     // /* TS ?.? */ suppressExcessPropertyErrors,
     // /* TS ?.? */ suppressImplicitAnyIndexErrors,
     // /* TS ?.? */ noLib: undefined,
-    // /* TS ?.? */ reactNamespace,
-    // /* TS 3.7 */ useDefineForClassFields,
+    // /* TS ?.? */ reactNamespace: undefined,
+    // /* TS 3.7 */ useDefineForClassFields: undefined,
+    // /* TS ?.? */ diagnostics: undefined,
+    // /* TS 4.0 */ disableReferencedProjectLoad: undefined,
+    // /* TS 3.8 */ disableSolutionSearching: undefined,
+    // /* TS 3.7 */ disableSourceOfProjectReferenceRedirect: undefined,
   },
   // ------------------------------------------------------------
   // The following are left to descendent tsconfig.json as needed
