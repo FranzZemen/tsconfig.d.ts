@@ -166,9 +166,14 @@ export interface CompilerOptions {
   /* TS 2.9 */ declarationMap?: boolean;
   /* TS 2.8 */ emitDeclarationOnly?: boolean;
   /* TS 2.0 */ declarationDir?: string;
+  /* TS ?.? */ diagnostics?: boolean;
+  /* TS ?.? */ extendedDiagnostics?: boolean;
+  /* TS 3.7 */ generateCpuProfile?: boolean;
+  /* TS ?.? */ listEmittedFiles?: boolean;
+  /* TS ?.? */ listFiles?: boolean;
   /* TS ?.? */ disableSizeLimit?: boolean;
-  disableSourceOfProjectReferenceRedirect?: boolean;
-  disableSolutionSearching?: boolean;
+  /* TS 3.7 */ disableSourceOfProjectReferenceRedirect?: boolean;
+  /* TS 3.8 */ disableSolutionSearching?: boolean;
   disableReferencedProjectLoad?: boolean;
   /* TS 2.3 */ downlevelIteration?: boolean;
   /* TS ?.? */ OM?: boolean;
@@ -223,9 +228,9 @@ export interface CompilerOptions {
   /* TS ?.? */ jsxFactory?: string;
   /* TS 4.0 */ jsxFragmentFactory?: string;
   /* TS 4.0 */ jsxImportSource?: string;
-  composite?: boolean;
-  incremental?: boolean;
-  tsBuildInfoFile?: string;
+  /* TS 3.0 */ composite?: boolean;
+  /* TS 3.4 */ incremental?: boolean;
+  /* TS 3.4 */ tsBuildInfoFile?: string;
   /* TS ?.? */ removeComments?: boolean;
   rootDir?: string;
   rootDirs?: string[];
@@ -242,7 +247,7 @@ export interface CompilerOptions {
   /* TS ?.? */ suppressExcessPropertyErrors?: boolean;
   /* TS ?.? */ suppressImplicitAnyIndexErrors?: boolean;
   /* TS 1.0 */ target?: Target;
-  traceResolution?: boolean;
+  /* TS 2.0 */ traceResolution?: boolean;
   /* TS 4.4 */ useUnknownInCatchVariables?: boolean;
   /* TS ?.? */ resolveJsonModule?: boolean;
   types?: string[];
@@ -261,5 +266,4 @@ export interface TsConfig {
   typeAcquisition?: TypeAcquisition;
   watchOptions?: WatchOptions;
 }
-
 ```
