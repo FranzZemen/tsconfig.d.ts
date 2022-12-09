@@ -6,7 +6,7 @@ This package has zero dependencies.
 
 This is in active development and documentation, but the TsConfig type is accurate and usable. 
 
-This covers up to Typescript 9.0 as of this release.  Our aim is to keep this updated to the latest version.
+This covers up to Typescript 4.9 as of this release.  Our aim is to keep this updated to the latest version.
 
 # config.d.ts
 
