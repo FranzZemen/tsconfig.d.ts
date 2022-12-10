@@ -1,0 +1,1 @@
+If contributing changes to tsconfig.ts please ensure that you follow the format of the file.  IF adding a field that should be present, please identify the TS version similar to other fields, and use ?.? if it cannot be found in official typescript docs.
