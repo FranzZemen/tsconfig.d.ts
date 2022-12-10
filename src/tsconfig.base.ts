@@ -20,7 +20,7 @@ export const tsconfigBase: TsConfig = {
     /* TS 1.8 */ noImplicitReturns: true,
     /* TS 4.2 */ noPropertyAccessFromIndexSignature: false,
     /* TS 4.1 */ noUncheckedIndexedAccess: true,
-    /* TS 2.3 */ strict: true,
+    /* TS 2.3 */ strict: false,
     // -------------------------------------------------------
     // If strict is set to true, set this painful condition to
     // false - it is true by default when strict is true
@@ -32,12 +32,12 @@ export const tsconfigBase: TsConfig = {
     // to true for better code and fewer errors
     // ---------------------------------------------------------
     // /* TS 2.1 */ alwaysStrict: true,
-    // /* TS 3.2 */ strictBindCallApply: true,
-    // /* TS 2.6 */ strictFunctionTypes: true,
+    /* TS 3.2 */ strictBindCallApply: true,
+    /* TS 2.6 */ strictFunctionTypes: true,
     // /* TS 2.7 */ strictPropertyInitialization: true,
-    // /* TS ?.? */ noImplicitAny: true,
-    // /* TS 2.0 */ noImplicitThis: true,
-    // /* TS 2.0 */ strictNullChecks: true,
+    /* TS ?.? */ noImplicitAny: true,
+    /* TS 2.0 */ noImplicitThis: true,
+    /* TS 2.0 */ strictNullChecks: true,
     // ---------------------------------------------------------
 
 

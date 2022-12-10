@@ -74,8 +74,11 @@ export enum ModuleDetection {
 export enum Module {
   none = 'none',
   commonjs = 'commonjs',
+  // Note that typescript potentially plans to deprecate and eventually eliminate this flag starting in version 5
   amd = 'amd',
+  // Note that typescript potentially plans to deprecate and eventually eliminate this flag starting in version 5
   umd = 'umd',
+  // Note that typescript potentially plans to deprecate and eventually eliminate this flag starting in version 5
   system = 'system',
   es6 = 'es6',
   es2015 = 'es2015',
@@ -99,6 +102,7 @@ export enum NewLine {
 }
 
 export enum Target {
+  // Note that typescript potentially plans to deprecate and eventually eliminate this flag starting in version 5
   es3 = 'es3',
   es5 = 'es5',
   es6 = 'es6',
