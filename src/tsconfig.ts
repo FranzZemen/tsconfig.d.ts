@@ -189,7 +189,7 @@ export type EmitCompilerOptions = {
 export type JavascriptSupportCompilerOptions = {
   /* TS 1.8 */ allowJs?: boolean;
   /* TS 2.3 */ checkJs?: boolean;
-  /* TS ?.? */ maxNodeModuleJsDepth;
+  /* TS ?.? */ maxNodeModuleJsDepth?;
 }
 
 export type EditorSupportCompilerOptions = {
