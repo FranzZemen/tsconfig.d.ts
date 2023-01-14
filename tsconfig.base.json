@@ -4,8 +4,9 @@ License Type: MIT
 */
 {
   "compilerOptions": {
-    "module": "CommonJS",
-    "target": "ES2021",
+    "module": "commonjs",
+    "target": "ESNext",
+    "moduleResolution": "NodeNext",
     "sourceMap": true,
     "declarationMap": true
   },

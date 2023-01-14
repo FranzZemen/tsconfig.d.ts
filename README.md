@@ -12,7 +12,7 @@ This covers up to Typescript 4.9 as of this release.  Our aim is to keep this up
 
 | Tag              | Version | Date       | Release Notes                                           |
 |------------------|---------|------------|---------------------------------------------------------|
-| cronos           | 0.1.5   | 06/01/2022 | 1. Broke compiler options into their own types          |
+| v0.1.15          | 0.1.15  | 06/01/2022 | 1. Broke compiler options into their own types          |
 |                  |         |            | 2. Converted everything to type rather than interfaces  |
 | typescript@4.9.3 | 0.1.14  | 12/05/2022 | First usable release                                    |
 |                  |         |            |                                                         |

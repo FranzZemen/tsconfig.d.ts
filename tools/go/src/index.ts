@@ -2,10 +2,8 @@
 Created by Franz Zemen 12/04/2022
 License Type: MIT
 */
-import {exit, argv, cwd} from 'node:process';
-import * as fs from 'fs';
-import {rm, readFileSync, writeFileSync, copyFileSync} from 'node:fs';
-import {constants} from 'os';
+import {copyFileSync, readFileSync, rm, writeFileSync} from 'node:fs';
+import {argv, exit} from 'node:process';
 
 if (argv.length < 3) {
   console.log('No command');
@@ -53,16 +51,16 @@ if (command === 'clean') {
   let incMajor = false, incMinor = false, incPatch = false;
   if (argv.length === 4) {
     const subCommand = argv[3];
-    console.log(`Subcommand: ${subCommand}`)
+    console.log(`Subcommand: ${subCommand}`);
     if (subCommand === 'major') {
       incMajor = true;
-    } else if(subCommand === 'minor') {
+    } else if (subCommand === 'minor') {
       incMinor = true;
-    } else if(subCommand === 'patch') {
+    } else if (subCommand === 'patch') {
       incPatch = true;
     }
   } else {
-    console.log('Format is pkg [patch|minor|major]' );
+    console.log('Format is pkg [patch|minor|major]');
     exit(400);
   }
   console.log('Packaging starting...');
@@ -70,23 +68,22 @@ if (command === 'clean') {
     let packageJson = readFileSync('./package.publish.json', {encoding: 'utf8'});
     const regex = /(\"version\"\s*\:\s*\")([0-9]+)\.([0-9]+)\.([0-9]+)([^"]*\")/;
     const result = regex.exec(packageJson);
-    if(result) {
+    if (result) {
       let prefix = result[1];
-      let major = parseInt(result[2],10);
+      let major = parseInt(result[2], 10);
       let minor = parseInt(result[3], 10);
-      let patch = parseInt(result[4],10);
+      let patch = parseInt(result[4], 10);
       console.log(`Existing version: ${major}.${minor}.${patch}`);
-      if(incMajor) {
+      if (incMajor) {
         major++;
         minor = 0;
         patch = 0;
-      } else if(incMinor) {
+      } else if (incMinor) {
         minor++;
         patch = 0;
       } else if (incPatch) {
         patch++;
-      }
-      else {
+      } else {
         console.log('Error, no incremental');
         exit(500);
       }
@@ -94,9 +91,9 @@ if (command === 'clean') {
       let suffix = result[5];
       packageJson = packageJson.replace(regex, `${prefix}${major}.${minor}.${patch}${suffix}`);
       writeFileSync('./package.publish.json', packageJson, {encoding: 'utf8'});
-      writeFileSync('./transient/publish/package.json',packageJson,{encoding: 'utf8'});
+      writeFileSync('./transient/publish/package.json', packageJson, {encoding: 'utf8'});
       copyFileSync('./README.md', './transient/publish/README.md');
-      console.log('...packaging completed')
+      console.log('...packaging completed');
     }
   } catch (err) {
     console.log(err);
@@ -104,6 +101,7 @@ if (command === 'clean') {
 } else {
   exit(404);
 }
+export {}
 
 
 

@@ -2,6 +2,7 @@
   "name": "tsconfig.d.ts",
   "description": "A tsconfig definition and an opinionated default generator",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
     "windows": "npm config set script-shell H:\\Git\\bin\\bash.exe",
     "clean": "cd ./tools/go && npx tsc && cd ../.. && npx clean",

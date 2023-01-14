@@ -4,8 +4,8 @@ exports.__esModule = true;
 Created by Franz Zemen 12/04/2022
 License Type: MIT
 */
-var node_process_1 = require("node:process");
 var node_fs_1 = require("node:fs");
+var node_process_1 = require("node:process");
 if (node_process_1.argv.length < 3) {
     console.log('No command');
     (0, node_process_1.exit)(400);
